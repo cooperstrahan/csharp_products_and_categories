@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+    <h3>New Product</h3>
+    @model MasterCategory
+    <form action="/categories/new" method="post">
+        <div class="form-group">
+            <span asp-validation-for="CategoryName"></span>
+            <label asp-for="CategoryName">Name: </label>
+            <input asp-for="CategoryName">
+        </div>
+        <button class="btn btn-primary">New Category</button>
+    </form>
+</body>
+</html>

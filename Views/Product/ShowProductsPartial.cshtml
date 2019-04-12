@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+    @model MasterProduct
+    <h3>Existing Product</h3>
+    @foreach (var product in @Model.Products)
+    {
+       <p><a href="/products/@product.ProductId">@product.ProductName</a></p>
+    }
+</body>
+</html>

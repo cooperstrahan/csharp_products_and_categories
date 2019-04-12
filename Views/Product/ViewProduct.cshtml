@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product Page</title>
+</head>
+<body>
+    @model AddCategory
+    <h1>@Model.Product.ProductName</h1>
+    <a href="/products">Products</a>
+    <h3>Categories</h3>
+    @foreach (var cat in Model.Existing)
+    {
+        <li>@cat.CategoryName</li>
+    }
+    <form action="/products/@Model.Product.ProductId/add" method="post">
+        <div class="form-group">
+            <span asp-validation-for="CategoryId"></span>
+            <label asp-for="CategoryId">Category: </label>
+            <select asp-for="CategoryId">
+                @foreach (var cat in Model.Available)
+                {
+                    <option value="@cat.CategoryId">@cat.CategoryName</option>
+                }
+                
+            </select>
+        </div>
+        <button>Add</button>
+    </form>
+    
+</body>
+</html>
